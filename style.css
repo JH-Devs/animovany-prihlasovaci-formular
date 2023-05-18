@@ -1,0 +1,182 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #3d3d3d;
+}
+.login{
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background-color: #1e272e;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.login::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent, transparent,#00ff00,#00ff00,#00ff00 );
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 5s linear infinite;
+}
+.borderLine {
+    position: absolute;
+    top: 0;
+    inset: 0;
+}
+.borderLine:before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent, transparent,#7d5fff,#7d5fff,#7d5fff);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+.borderLine:after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent, transparent,#7d5fff,#7d5fff,#7d5fff);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+}
+.login::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent, transparent,#00ff00,#00ff00,#00ff00 );
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+/* toto zadám po .login::before */
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.login form{
+    position: absolute;
+    inset: 3px;
+    background-color: #222;
+    padding: 50px 40px;
+    border-radius: 5px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+.login form h2{
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 1.5px;
+    background-image: linear-gradient(to left, #ff0000, #00ff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.login form .formGroup{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+.login form .formGroup input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: #23242a;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index:10;
+}
+.login form .formGroup span{
+    color:lightgrey;
+    position: absolute;
+    left:0;
+    padding: 20px 0px 10px;
+    pointer-events: none;
+    font-size: 16px;
+    letter-spacing: 0.9px;
+    transition: 0.5s;
+}
+.login form .formGroup input:valid ~ span,
+.login form .formGroup input:focus ~ span {
+    color: white;
+    font-size: 12px;
+    transform: translateY(-34px);
+}
+.login form .formGroup i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.login form .formGroup input:valid ~ i,
+.login form .formGroup input:focus ~ i {
+    height: 44px;
+}
+.login form .links{
+    display: flex;
+    justify-content: space-between;
+}
+.login form .links a {
+    margin: 10px 0;
+    font-size: 14px;
+    color: gray;
+    text-decoration: none;
+}
+.login form .links a:hover,
+.login form .links a:nth-child(2){
+    color: white;
+}
+.login form button{
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 25px;
+}
+.login form button:active{
+
+}
